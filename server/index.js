@@ -3,12 +3,12 @@ const path = require('path');
 
 // Instead of defining all of the controllers here, we've moved them to their own folder
 const {
-  serveFellows,
-  serveFellow,
-  createFellow,
-  updateFellow,
-  deleteFellow
-} = require('./controllers/fellowControllers');
+  serveSongs,
+  serveSong,
+  createSong,
+  updateSong,
+  deleteSong
+} = require('./controllers/songControllers');
 
 const app = express();
 
@@ -39,11 +39,11 @@ app.use(logRoutes);
 // Endpoints
 ////////////////////////
 
-app.get('/api/fellows', serveFellows);
-app.get('/api/fellows/:id', serveFellow);
-app.post('/api/fellows', createFellow);
-app.patch('/api/fellows/:id', updateFellow);
-app.delete('/api/fellows/:id', deleteFellow);
+app.get('/api/songs', serveSongs);
+app.get('/api/songs/:id', serveSong);
+app.post('/api/songs', createSong);
+app.patch('/api/songs/:id', updateSong);
+app.delete('/api/songs/:id', deleteSong);
 app.get('*', (req, res, next) => {
   if (req.originalUrl.startsWith('/api')) return next();
   res.sendFile(pathToFrontendDist);

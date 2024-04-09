@@ -11,9 +11,10 @@ the collection of songs.
 class Song {
   static #all = [];
 
-  constructor(title) {
+  constructor(title, artist) {
     this.id = getId();
-    this.title = title;
+    this.title = title || 'Thanks, OBAMA (Part II) (Remix)';
+    this.artist = artist || 'Gonzalo Romero';
 
     Song.#all.push(this);
   }
@@ -30,6 +31,13 @@ class Song {
     const song = Song.find(id);
     if (!song) return null;
     song.title = newTitle;
+    return song;
+  }
+
+  static editArtist(id, newArtist) {
+    const song = Song.find(id);
+    if (!song) return null;
+    song.artist = newArtist;
     return song;
   }
 

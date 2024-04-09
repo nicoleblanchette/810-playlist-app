@@ -19,8 +19,8 @@ const serveSong = (req, res) => {
 };
 
 const createSong = (req, res) => {
-  const { songTitle } = req.body; // The POST request body will be an object: `{ songTitle: 'title' }`
-  const newSong = new Song(songTitle);
+  const { songTitle, songArtist } = req.body; // The POST request body will be an object: `{ songTitle: 'title' }`
+  const newSong = new Song(songTitle, songArtist);
   res.send(newSong);
 };
 

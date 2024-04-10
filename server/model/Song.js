@@ -11,10 +11,12 @@ the collection of songs.
 class Song {
   static #all = [];
 
-  constructor(title, artist) {
+  constructor(title, artist, coverImg, src) {
     this.id = getId();
     this.title = title || 'Thanks, OBAMA (Part II) (Remix)';
     this.artist = artist || 'Gonzalo Romero';
+    this.coverImg = coverImg || 'https://steamuserimages-a.akamaihd.net/ugc/1630822545723771399/0945CC59EFF3534D637326CA6FB09A2C3FA83DD1/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false';
+    this.src = src || 'https://drive.google.com/file/d/1fnLRZNwCZDiotzvbqBOpD9tB0iSA0VDF/preview'
 
     Song.#all.push(this);
   }
@@ -38,6 +40,20 @@ class Song {
     const song = Song.find(id);
     if (!song) return null;
     song.artist = newArtist;
+    return song;
+  }
+
+  static editCover(id, newCover) {
+    const song = Song.find(id);
+    if (!song) return null;
+    song.coverImg = newCover;
+    return song;
+  }
+
+  static editSrc(id, newSrc) {
+    const song = Song.find(id);
+    if (!song) return null;
+    song.src = newSrc;
     return song;
   }
 

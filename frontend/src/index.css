@@ -3,7 +3,7 @@
 html {
   background: linear-gradient(#290034, #5b0d61);
   background-size: cover;
-  height: 100vh;
+  min-height: 100vh;
   font-family: "Gaegu", sans-serif;
   font-weight: 300;
 }
@@ -33,4 +33,19 @@ h2 {
 
 h3 {
   margin: 0 auto;
+}
+
+a {
+  color: #00eeff;
+}
+
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+iframe {
+  min-width: 25%;
 }

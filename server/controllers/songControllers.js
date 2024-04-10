@@ -25,9 +25,13 @@ const createSong = (req, res) => {
 };
 
 const updateSong = (req, res) => {
-  const { songTitle } = req.body;
+  const { songTitle, songArtist, songCoverImg, songSrc } = req.body;
   const { id } = req.params;
   const updatedSong = Song.editTitle(Number(id), songTitle);
+  // Song.editTitle(Number(id), songTitle);
+  // Song.editArtist(Number(id), songArtist);
+  // Song.editCover(Number(id), songCoverImg);
+  // const updatedSong = Song.editSrc(Number(id), songSrc)
   // sendStatus sends just the status with no message body
   if (!updatedSong) return res.sendStatus(404);
   res.send(updatedSong);

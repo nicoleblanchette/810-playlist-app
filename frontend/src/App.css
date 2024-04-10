@@ -19,3 +19,9 @@
 #tracklist {
   list-style: none;
 }
+
+#album-cover {
+  width: 15em;
+  height: 15em;
+  object-fit: contain;
+}

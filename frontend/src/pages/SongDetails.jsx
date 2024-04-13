@@ -60,7 +60,6 @@ const SongDetails = () => {
     } catch (error) {
       console.log(error);
     }
-    setNewSongTitle('')
   }
 
   const changeSongArtist = async (e) => {
@@ -78,7 +77,6 @@ const SongDetails = () => {
     } catch (error) {
       console.log(error);
     }
-    setNewSongArtist('')
   
   }
 
@@ -97,7 +95,6 @@ const SongDetails = () => {
     } catch (error) {
       console.log(error);
     }
-    setNewSongCoverImg('')
   
   }
 
@@ -116,7 +113,6 @@ const SongDetails = () => {
     } catch (error) {
       console.log(error);
     }
-    setNewSongSrc('')
   
   }
 

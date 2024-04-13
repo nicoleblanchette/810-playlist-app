@@ -32,28 +32,28 @@ class Song {
   static editTitle(id, newTitle) {
     const song = Song.find(id);
     if (!song) return null;
-    song.title = newTitle;
+    song.title = newTitle || song.title;
     return song;
   }
 
   static editArtist(id, newArtist) {
     const song = Song.find(id);
     if (!song) return null;
-    song.artist = newArtist;
+    song.artist = newArtist || song.artist;
     return song;
   }
 
   static editCover(id, newCover) {
     const song = Song.find(id);
     if (!song) return null;
-    song.coverImg = newCover;
+    song.coverImg = newCover || song.coverImg;
     return song;
   }
 
   static editSrc(id, newSrc) {
     const song = Song.find(id);
     if (!song) return null;
-    song.src = newSrc;
+    song.src = newSrc || song.src;
     return song;
   }
 
